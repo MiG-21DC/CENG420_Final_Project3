@@ -56,13 +56,9 @@ def plot_decision_boundary(pred_func):
     y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
     h = 0.01
     # Generate a grid of points with distance h between them
-    try:
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h),sparse=True)
-    except Exception as e:
-        print(e)
-        print(x_min,x_max,h)
-        print(y_min,y_max,h)
-        return
+
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h),sparse=True)
+
 
     # Predict the function value for the whole gid
     Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
