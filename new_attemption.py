@@ -89,8 +89,8 @@ with open('data.csv', 'w', newline='') as csvfile:
         a = random_num()
         acode = ed.decode(a)
         writer.writerow([a, acode, get_score(a), key])
-    for i in range(80):
-        if i == 20:
+    for i in range(40):
+        if i == 10:
             key = 1
         a = random_str()
         acode = ed.decode(a)
