@@ -3,6 +3,7 @@ import csv
 
 BASE62 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+
 class BaseTransfer:
 
     def encode(self,num, alphabet=BASE62):
@@ -42,7 +43,7 @@ class BaseTransfer:
         return num
 
 ed = BaseTransfer()
-
+random = Random()
 
 
 def random_str(randomlength=6):
@@ -54,13 +55,43 @@ def random_str(randomlength=6):
         str+=chars[random.randint(0, length)]
     return str
 
-random = Random()
+def random_num(randomlength=6):
+    str = ''
+    chars = '0123456789'
+    length = len(chars) - 1
+    random = Random()
+    for i in range(randomlength):
+        str += chars[random.randint(0, length)]
+    return str
+
+
+def get_score(passcode):
+    if passcode.isdigit():
+        return random.uniform(0.1,0.2)
+    elif passcode.isalpha() and passcode.istitle():
+        return random.uniform(0.3,0.4)
+    counter = 0
+    for i in range(len(passcode)):
+        if passcode[i].isdigit():
+            counter += 1
+    if counter == 0 or counter == 5:
+        return random.uniform(0.5, 0.6)
+    elif counter == 1 or counter == 4:
+        return random.uniform(0.7, 0.8)
+    else:
+        return random.uniform(0.8, 0.9)
+
+
 key = 0
 with open('data.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    for i in range(1000):
+    for i in range(100):
+        a = random_num()
+        acode = ed.decode(a)
+        writer.writerow([a, acode, get_score(a), key])
+    for i in range(900):
         if i == 200:
             key = 1
         a = random_str()
         acode = ed.decode(a)
-        writer.writerow([a, acode, random.uniform(0.1, 0.9), key])
+        writer.writerow([a, acode, get_score(a), key])
