@@ -13,7 +13,7 @@ with open('data.csv', 'r') as csvfile:
         pointset.append(point)
         key.append(row[3])
 
-X = np.array(pointset).astype(np.int)
+X = np.array(pointset).astype(np.float)
 y = np.array(key)
 
 # data = (pointset,key)
