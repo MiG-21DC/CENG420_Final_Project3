@@ -1,6 +1,7 @@
 from sklearn import datasets
 import matplotlib.pyplot as plt
 import csv
+import numpy as np
 
 pointset = []
 data = ()
@@ -12,8 +13,10 @@ with open('data.csv', 'r') as csvfile:
         pointset.append(point)
         key.append(row[3])
 
+pointsetarray = np.array(pointset)
+keyarray = np.array(key)
 data = (pointset,key)
 x, y = data
-print(type(pointset))
-print(type(key))
-plt.scatter(pointset[:,0], pointset[:,1], s=40, c=key, cmap=plt.cm.Spectral)
+print(pointsetarray)
+print(keyarray)
+plt.scatter(pointsetarray[:,0], pointsetarray[:,1], s=40, c=keyarray, cmap=plt.cm.Spectral)
