@@ -61,7 +61,7 @@ def plot_decision_boundary(pred_func):
     except Exception as e:
         print(e)
         print(x_min,x_max,h)
-        print(xx,yy)
+        print(y_min,y_max,h)
         return
 
     # Predict the function value for the whole gid
