@@ -39,8 +39,8 @@ matplotlib.rcParams['figure.figsize'] = (10.0, 8.0)
 # np.random.seed(3)
 # X, y = sklearn.datasets.make_moons(200, noise=0.20)
 # plt.scatter(X[:, 0], X[:, 1], s=40, c=y, cmap=plt.cm.Spectral)
-X = pointset
-y = key
+# X = pointsetarray
+# y = keyarray
 # %% 3
 # Train the logistic rgeression classifier
 clf = sklearn.linear_model.LogisticRegressionCV()
