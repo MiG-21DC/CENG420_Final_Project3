@@ -14,7 +14,6 @@ with open('data.csv', 'r') as csvfile:
 
 data = (pointset,key)
 x, y = data
-print(x)
-print(y)
-
+print(type(pointset))
+print(type(key))
 plt.scatter(pointset[:,0], pointset[:,1], s=40, c=key, cmap=plt.cm.Spectral)
