@@ -57,7 +57,7 @@ def plot_decision_boundary(pred_func):
     h = 0.01
     # Generate a grid of points with distance h between them
 
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h),sparse=True)
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h),sparse=True, copy = False)
 
 
     # Predict the function value for the whole gid
