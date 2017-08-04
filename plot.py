@@ -13,8 +13,9 @@ with open('data.csv', 'r') as csvfile:
         pointset.append(point)
         key.append(row[3])
 
-pointsetarray = np.array(pointset)
-keyarray = np.array(key)
+X = np.array(pointset)
+y = np.array(key)
+
 # data = (pointset,key)
 # x, y = data
 # print(pointsetarray)
@@ -38,8 +39,8 @@ matplotlib.rcParams['figure.figsize'] = (10.0, 8.0)
 # np.random.seed(3)
 # X, y = sklearn.datasets.make_moons(200, noise=0.20)
 # plt.scatter(X[:, 0], X[:, 1], s=40, c=y, cmap=plt.cm.Spectral)
-X = pointsetarray
-y = keyarray
+# X = pointsetarray
+# y = keyarray
 # %% 3
 # Train the logistic rgeression classifier
 clf = sklearn.linear_model.LogisticRegressionCV()
@@ -51,7 +52,6 @@ clf.fit(X, y)
 # If you don't fully understand this function don't worry, it just generates the contour plot below.
 def plot_decision_boundary(pred_func):
     # Set min and max values and give it some padding
-    print(X)
     x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
     y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
     h = 0.01
