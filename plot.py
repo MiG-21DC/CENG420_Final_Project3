@@ -1,4 +1,4 @@
-from sklearn import datasets
+
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
@@ -51,6 +51,7 @@ clf.fit(X, y)
 # If you don't fully understand this function don't worry, it just generates the contour plot below.
 def plot_decision_boundary(pred_func):
     # Set min and max values and give it some padding
+    print(X)
     x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
     y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
     h = 0.01
