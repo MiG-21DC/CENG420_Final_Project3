@@ -57,7 +57,7 @@ def plot_decision_boundary(pred_func):
     h = 0.01
     # Generate a grid of points with distance h between them
     try:
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h),sparse=True)
     except Exception as e:
         print(e)
         print(x_min,x_max,h)
