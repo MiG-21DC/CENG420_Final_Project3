@@ -62,7 +62,12 @@ def plot_decision_boundary(pred_func):
 
 
     # Predict the function value for the whole gid
-    Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
+    try:
+        Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
+    except Exception as e:
+        print(xx)
+        print(yy)
+        return
     Z = Z.reshape(xx.shape)
     # Plot the contour and training examples
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
