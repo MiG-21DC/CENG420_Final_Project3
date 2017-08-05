@@ -65,8 +65,8 @@ def plot_decision_boundary(pred_func):
     try:
         Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
     except Exception as e:
-        print(xx)
-        print(yy)
+        print(xx.shape)
+        print(yy.shape)
         return
     Z = Z.reshape(xx.shape)
     # Plot the contour and training examples
