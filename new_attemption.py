@@ -67,14 +67,16 @@ def random_num(randomlength=6):
 
 def get_score(passcode):
     if passcode.isdigit():
-        return random.uniform(0.1,0.2)
+        return random.uniform(0.1, 0.2)
     elif passcode.isalpha() and passcode.istitle():
-        return random.uniform(0.3,0.4)
+        return random.uniform(0.3, 0.4)
     counter = 0
     for i in range(len(passcode)):
         if passcode[i].isdigit():
             counter += 1
-    if counter == 0 or counter == 5:
+    if counter == 5:
+        return random.uniform(0.2, 0.4)
+    if counter == 0:
         return random.uniform(0.5, 0.6)
     elif counter == 1 or counter == 4:
         return random.uniform(0.7, 0.8)
