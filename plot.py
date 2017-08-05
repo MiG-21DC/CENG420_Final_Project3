@@ -23,6 +23,8 @@ keyarray = y
 print(X)
 print(y)
 plt.scatter(pointsetarray[:,0], pointsetarray[:,1], s=40, c=keyarray, cmap=plt.cm.Spectral)
+plt.show()
+
 
 """
 # %% 1
