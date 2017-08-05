@@ -9,7 +9,7 @@ key = []
 with open('data.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
-        point = [row[1], row[2]]
+        point = [float(row[1])/10000000000, row[2]]
         pointset.append(point)
         key.append(row[3])
 
