@@ -16,12 +16,15 @@ with open('data.csv', 'r') as csvfile:
 X = np.array(pointset).astype(np.float)
 y = np.array(key)
 
-# data = (pointset,key)
-# x, y = data
-# print(pointsetarray)
-# print(keyarray)
-# plt.scatter(pointsetarray[:,0], pointsetarray[:,1], s=40, c=keyarray, cmap=plt.cm.Spectral)
+data = (pointset,key)
+x, y = data
+pointsetarray = X
+keyarray = y
+print(X)
+print(y)
+plt.scatter(pointsetarray[:,0], pointsetarray[:,1], s=40, c=keyarray, cmap=plt.cm.Spectral)
 
+"""
 # %% 1
 # Package imports
 import matplotlib.pyplot as plt
@@ -193,3 +196,5 @@ for i, nn_hdim in enumerate(hidden_layer_dimensions):
     model = build_model(nn_hdim)
     plot_decision_boundary(lambda x: predict(model, x))
 plt.show()
+
+"""
