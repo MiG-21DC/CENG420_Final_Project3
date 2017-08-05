@@ -26,7 +26,7 @@ plt.scatter(pointsetarray[:,0], pointsetarray[:,1], s=40, c=keyarray, cmap=plt.c
 plt.show()
 
 
-"""
+
 # %% 1
 # Package imports
 import matplotlib.pyplot as plt
@@ -199,4 +199,3 @@ for i, nn_hdim in enumerate(hidden_layer_dimensions):
     plot_decision_boundary(lambda x: predict(model, x))
 plt.show()
 
-"""
