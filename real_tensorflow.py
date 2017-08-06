@@ -60,12 +60,9 @@ def train_neural_network(x):
             # for _ in range(int(mnist.train.num_examples/batch_size)):
             #     epoch_x, epoch_y = mnist.train.next_batch(batch_size)
             i = 0
-            print(len(train_x))
             while i < len(train_x):
                 start = i
                 end = i+batch_size
-                print(train_x)
-                print(train_y)
                 batch_x = np.array(train_x[start:end])
                 batch_y = np.array(train_y[start:end])
 
