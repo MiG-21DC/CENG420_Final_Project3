@@ -70,6 +70,7 @@ def train_neural_network(x):
                 # print(epoch_y, epoch_y.shape)
                 _, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
                 epoch_loss += c
+                i += batch_size
             print('Epoch', epoch, 'completed out of', hm_epochs,'loss:',epoch_loss)
 
         correct = tf.equal(tf.argmax(prediction,1),tf.argmax(y,1))
