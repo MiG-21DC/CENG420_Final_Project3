@@ -12,9 +12,7 @@ batch_size = 100
 
 x = tf.placeholder('float')
 y = tf.placeholder('float')
-print(x)
-print(y)
-print('got here')
+
 def neural_network_model(data):
     print('got model')
     hidden_1_layer = {'weights':tf.Variable(tf.random_normal([784, n_nodes_hl1])),
