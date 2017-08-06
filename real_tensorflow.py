@@ -66,6 +66,8 @@ def train_neural_network(x):
 
                 batch_x = np.array(train_x[start:end])
                 batch_y = np.array(train_y[start:end])
+                print(batch_x)
+                print(batch_y)
                 # print(epoch_x, epoch_x.shape)
                 # print(epoch_y, epoch_y.shape)
                 _, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
