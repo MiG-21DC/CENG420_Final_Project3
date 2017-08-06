@@ -12,6 +12,8 @@ batch_size = 100
 
 x = tf.placeholder('float')
 y = tf.placeholder('float')
+print(x)
+print(y)
 print('got here')
 def neural_network_model(data):
     print('got model')
