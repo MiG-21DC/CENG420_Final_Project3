@@ -12,7 +12,7 @@ class NeuralNetwork:
         self.n_nodes_hl3 = layer_3
     
         self.n_classes = 2
-        self.batch_size = 100
+        self.batch_size = 1000
         self.train_x, self.train_y, self.test_x, self.test_y = get_data()
         self.x = tf.placeholder('float', [None, len(self.train_x[0])])
         self.y = tf.placeholder('float')
