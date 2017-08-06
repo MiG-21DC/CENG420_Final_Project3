@@ -58,11 +58,11 @@ def train_neural_network(x):
 
         for epoch in range(hm_epochs):
             epoch_loss = 0
-            print(mnist.train.num_examples)
+            print(mnist.train.num_examples/batch_size)
             for _ in range(int(mnist.train.num_examples/batch_size)):
                 epoch_x, epoch_y = mnist.train.next_batch(batch_size)
-                print(epoch_x, epoch_x.shape)
-                print(epoch_y, epoch_y.shape)
+                # print(epoch_x, epoch_x.shape)
+                # print(epoch_y, epoch_y.shape)
                 _, c = sess.run([optimizer, cost], feed_dict = {x: epoch_x, y: epoch_y})
                 epoch_loss += c
             print('Epoch', epoch, 'completed out of', hm_epochs,'loss:',epoch_loss)
