@@ -87,11 +87,11 @@ def get_score(passcode):
 key = 0
 with open('data.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    for i in range(200):
+    for i in range(2000):
         a = random_num()
         acode = ed.decode(a)
         writer.writerow([a, acode, get_score(a), key])
-    for i in range(800):
+    for i in range(8000):
         if i == 10:
             key = 1
         a = random_str()
