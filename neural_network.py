@@ -16,6 +16,8 @@ class NeuralNetwork:
         self.train_x, self.train_y, self.test_x, self.test_y = get_data()
         self.x = tf.placeholder('float', [None, len(self.train_x[0])])
         self.y = tf.placeholder('float')
+        self.accuracy_record = 0
+        self.best_layer = []
 
     def neural_network_model(self, data):
         hidden_1_layer = {'weights':tf.Variable(tf.random_normal([len(self.train_x[0]), self.n_nodes_hl1])),
@@ -77,11 +79,36 @@ class NeuralNetwork:
             correct = tf.equal(tf.argmax(prediction,1),tf.argmax(self.y,1))
             accuracy = tf.reduce_mean(tf.cast(correct,'float'))
             print('Accuracy',accuracy.eval({self.x:self.test_x, self.y:self.test_y}))
+            return accuracy.eval({self.x:self.test_x, self.y:self.test_y})
 
 
     def start_running(self):
-        self.train_neural_network(self.x)
+        acc = self.train_neural_network(self.x)
+        if acc > self.accuracy_record:
+            self.accuracy_record = acc
+            self.best_layer = [self.n_nodes_hl1, self.n_nodes_hl2, self.n_nodes_hl3]
+            print('Best accuracy', acc, 'is found at layer',self.best_layer)
 
 
-test = NeuralNetwork(1000,1000,1000)
-test.start_running()
+    def set_layer1(self,layer1):
+        self.n_nodes_hl1 = layer1
+
+    def set_layer2(self,layer2):
+        self.n_nodes_hl2 = layer2
+
+    def set_layer3(self,layer3):
+        self.n_nodes_hl3 = layer3
+
+
+test = NeuralNetwork(1,1,1)
+for layer1 in range(1,1001):
+    test.set_layer1(layer1)
+    for layer2 in range(1,1001):
+        test.set_layer2(layer2)
+        for layer3 in range(1,1001):
+            test.set_layer3(layer3)
+            test.start_running()
+
+print('final result')
+print('Best layer', test.best_layer, 'with accuracy', test.accuracy_record)
+
