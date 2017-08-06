@@ -66,5 +66,5 @@ def train_neural_network(x):
         accuracy = tf.reduce_mean(tf.cast(correct,'float'))
         print('Accuracy',accuracy.eval({x:mnist.test.images, y:minst.test.labels}))
 
-    train_neural_network(x)
+train_neural_network(x)
 
