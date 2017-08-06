@@ -63,7 +63,7 @@ def train_neural_network(x):
             print(len(train_x))
             while i < len(train_x):
                 start = i
-                end = i*batch_size
+                end = i+batch_size
                 print(train_x)
                 print(train_y)
                 batch_x = np.array(train_x[start:end])
