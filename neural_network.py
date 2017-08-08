@@ -100,7 +100,7 @@ class NeuralNetwork:
         self.n_nodes_hl3 = layer3
 
 
-test = NeuralNetwork(1000,1000,10000)
+test = NeuralNetwork(1000,1000,1000)
 test.start_running()
 # for layer1 in range(1,1001):
 #     test.set_layer1(layer1)
