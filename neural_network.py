@@ -84,10 +84,10 @@ class NeuralNetwork:
 
     def start_running(self):
         acc = self.train_neural_network(self.x)
-        if acc > self.accuracy_record:
-            self.accuracy_record = acc
-            self.best_layer = [self.n_nodes_hl1, self.n_nodes_hl2, self.n_nodes_hl3]
-            print('Best accuracy', acc, 'is found at layer',self.best_layer)
+        # if acc > self.accuracy_record:
+        #     self.accuracy_record = acc
+        #     self.best_layer = [self.n_nodes_hl1, self.n_nodes_hl2, self.n_nodes_hl3]
+        #     print('Best accuracy', acc, 'is found at layer',self.best_layer)
 
 
     def set_layer1(self,layer1):
@@ -100,15 +100,16 @@ class NeuralNetwork:
         self.n_nodes_hl3 = layer3
 
 
-test = NeuralNetwork(1,1,1)
-for layer1 in range(1,1001):
-    test.set_layer1(layer1)
-    for layer2 in range(1,1001):
-        test.set_layer2(layer2)
-        for layer3 in range(1,1001):
-            test.set_layer3(layer3)
-            test.start_running()
+test = NeuralNetwork(1000,1000,10000)
+test.start_running()
+# for layer1 in range(1,1001):
+#     test.set_layer1(layer1)
+#     for layer2 in range(1,1001):
+#         test.set_layer2(layer2)
+#         for layer3 in range(1,1001):
+#             test.set_layer3(layer3)
+#             test.start_running()
 
-print('final result')
-print('Best layer', test.best_layer, 'with accuracy', test.accuracy_record)
+# print('final result')
+# print('Best layer', test.best_layer, 'with accuracy', test.accuracy_record)
 
