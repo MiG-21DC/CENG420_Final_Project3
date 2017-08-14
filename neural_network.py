@@ -48,7 +48,7 @@ class NeuralNetwork:
 
         return output
 
-    saver = tf.train.Saver()
+    # saver = tf.train.Saver()
 
     def train_neural_network(self,x):
         prediction = self.neural_network_model(x)
@@ -78,7 +78,7 @@ class NeuralNetwork:
                     i += self.batch_size
                 print('Epoch', epoch, 'completed out of', hm_epochs,'loss:',epoch_loss)
 
-            self.saver.save(sess,'model.ckpt')
+            # self.saver.save(sess,'model.ckpt')
             correct = tf.equal(tf.argmax(prediction,1),tf.argmax(self.y,1))
             accuracy = tf.reduce_mean(tf.cast(correct,'float'))
             print('Accuracy',accuracy.eval({self.x:self.test_x, self.y:self.test_y}))
