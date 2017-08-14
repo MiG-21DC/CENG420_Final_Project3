@@ -92,7 +92,7 @@ with open('data.csv', 'w', newline='') as csvfile:
         acode = ed.decode(a)
         writer.writerow([a, acode, get_score(a), key])
     for i in range(8000):
-        if i == 10:
+        if i == 1000:
             key = 1
         a = random_str()
         acode = ed.decode(a)
