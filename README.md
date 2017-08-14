@@ -13,8 +13,11 @@ For Andres
 #3.  source venv/bin/activate
 
 If there is already generated data.csv file, then
+
 #4. python3 neural_network.py
 
 If not, try to generate a data.csv file first
+
 #4 python3 new_attemption.py
+
 python3 neural_network.py
