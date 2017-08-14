@@ -19,6 +19,7 @@ class NeuralNetwork:
         self.accuracy_record = 0
         self.best_layer = []
 
+
     def neural_network_model(self, data):
         hidden_1_layer = {'weights':tf.Variable(tf.random_normal([len(self.train_x[0]), self.n_nodes_hl1])),
                           'biases':tf.Variable(tf.random_normal([self.n_nodes_hl1]))}
@@ -47,6 +48,7 @@ class NeuralNetwork:
 
         return output
 
+    saver = tf.train.Saver()
 
     def train_neural_network(self,x):
         prediction = self.neural_network_model(x)
@@ -76,6 +78,7 @@ class NeuralNetwork:
                     i += self.batch_size
                 print('Epoch', epoch, 'completed out of', hm_epochs,'loss:',epoch_loss)
 
+            self.saver.save(sess,'model.ckpt')
             correct = tf.equal(tf.argmax(prediction,1),tf.argmax(self.y,1))
             accuracy = tf.reduce_mean(tf.cast(correct,'float'))
             print('Accuracy',accuracy.eval({self.x:self.test_x, self.y:self.test_y}))
