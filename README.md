@@ -12,7 +12,7 @@ Essential package: tensorflow, numpy, virtualenv
 #2.  $cd CENG420_Final_Project3
 
 
-#3.  create virtual environment
+#3.  create virtual environment (make sure all essential package is installed in global environment, otherwise after activating the virtual environment, all packages need to be installed again)
 
     $virtualenv venv
 
