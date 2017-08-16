@@ -1,9 +1,7 @@
 import tensorflow as tf
 from get_set import get_data
 import numpy as np
-# from tensorflow.examples.tutorials.mnist import input_data
 
-# mnist = input_data.read_data_sets('/tmp/data',one_hot=True)
 
 class NeuralNetwork:
     def __init__(self, layer_1=1000, layer_2=1000, layer_3=1000):
@@ -62,8 +60,7 @@ class NeuralNetwork:
 
             for epoch in range(hm_epochs):
                 epoch_loss = 0
-                # for _ in range(int(mnist.train.num_examples/batch_size)):
-                #     epoch_x, epoch_y = mnist.train.next_batch(batch_size)
+
                 i = 0
                 while i < len(self.train_x):
                     start = i
@@ -103,8 +100,9 @@ class NeuralNetwork:
         self.n_nodes_hl3 = layer3
 
 
-test = NeuralNetwork(1000,1000,1000)
+test = NeuralNetwork(1000, 1000, 1000)
 test.start_running()
+
 # for layer1 in range(1,1001):
 #     test.set_layer1(layer1)
 #     for layer2 in range(1,1001):
