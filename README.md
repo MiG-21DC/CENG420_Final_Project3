@@ -34,7 +34,10 @@ Essential package: tensorflow, numpy, virtualenv
 
 
 
-For Andres
+
+------------------------------------------------------------------------------------------------------------------------
+
+For Andres Demo
 
 
 #1.  Login with andres account
